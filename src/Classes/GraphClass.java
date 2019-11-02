@@ -12,6 +12,7 @@ package Classes;
 public class GraphClass {
 
     private Nodo root;
+    private int level;
 
     public GraphClass() {
         root = null;
@@ -43,7 +44,7 @@ public class GraphClass {
     }
 
     public void addNode(Nodo node) {
-
+        System.out.println("Insertando: "+node.getValue());
         if (this.root == null) {
             root = node;
         } else {
@@ -56,10 +57,11 @@ public class GraphClass {
             if (node.getLeft() != null) {
                 printGraph(node.getLeft());
             }
+            System.out.println(node.getValue());
             if (node.getRight() != null) {
                 printGraph(node.getRight());
             }
-            System.out.println(node.getValue());
+            
         }
     }
 
